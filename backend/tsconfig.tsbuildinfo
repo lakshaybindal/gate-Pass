@@ -1,1 +1,1 @@
-{"root":["./src/config.ts","./src/index.ts","./src/lib/validator/uservalidator.ts","./src/routes/admin.ts","./src/routes/guard.ts","./src/routes/user.ts"],"version":"5.7.3"}
+{"root":["./src/config.ts","./src/index.ts","./src/lib/validator/adminvalidator.ts","./src/lib/validator/guardvalidator.ts","./src/lib/validator/uservalidator.ts","./src/middleware/adminmiddleware.ts","./src/middleware/guardmiddleware.ts","./src/middleware/usermiddleware.ts","./src/routes/admin.ts","./src/routes/guard.ts","./src/routes/user.ts"],"version":"5.7.3"}

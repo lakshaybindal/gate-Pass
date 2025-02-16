@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -b && nodemon dist/index.js",
+    "dev": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,11 +19,15 @@
   },
   "dependencies": {
     "@prisma/client": "^6.3.1",
+    "@types/date-fns": "^2.5.3",
     "@types/jsonwebtoken": "^9.0.8",
+    "@types/nodemailer": "^6.4.17",
     "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.10.0",
     "zod": "^3.24.2"
   }
 }
