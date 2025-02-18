@@ -1,3 +1,4 @@
+import { partialDeepStrictEqual } from "assert";
 import zod from "zod";
 export const userSignup = zod.object({
   name: zod.string(),
@@ -11,4 +12,10 @@ export const userSignup = zod.object({
 export const userSignin = zod.object({
   email: zod.string().email(),
   password: zod.string().min(6),
+});
+export const userMail = zod.object({
+  from: zod.string(),
+  to: zod.string(),
+  place: zod.string(),
+  reason: zod.string(),
 });

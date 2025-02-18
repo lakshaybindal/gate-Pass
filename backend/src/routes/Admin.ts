@@ -71,7 +71,7 @@ router.get(
         email: true,
       },
     });
-    return res.json({users});
+    return res.json({ users });
   }
 );
 router.put(

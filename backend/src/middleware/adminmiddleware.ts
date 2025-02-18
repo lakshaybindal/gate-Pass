@@ -17,11 +17,11 @@ function aAuth(req: Request, res: Response, next: NextFunction) {
       process.env.JWT_SECRET as string
     ) as PayLoad;
     if (!decoded) {
-      res.status(403).json({ e: "eror" });
+      res.status(403).json({ e: "error" });
       return;
     }
     req.adminId = decoded.id;
-    console.log(req.adminId);
+
     next();
   } catch (e) {
     res.status(403).json({ e: e });

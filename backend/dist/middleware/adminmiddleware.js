@@ -9,11 +9,10 @@ function aAuth(req, res, next) {
         const token = req.headers.authorization || "";
         const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         if (!decoded) {
-            res.status(403).json({ e: "eror" });
+            res.status(403).json({ e: "error" });
             return;
         }
         req.adminId = decoded.id;
-        console.log(req.adminId);
         next();
     }
     catch (e) {
