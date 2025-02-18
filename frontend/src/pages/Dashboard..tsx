@@ -4,13 +4,14 @@ import Inputbox from "../components/InputBox";
 import Button from "../components/Button";
 import axios from "axios";
 import frontImage from "../Images/frontImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 function LeaveApplication() {
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const [placeToGo, setPlaceToGo] = useState("");
   const [reason, setReason] = useState("");
-
+  const navigator = useNavigate();
   async function handleLeaveApplication() {
     try {
       const res = await axios.post(
@@ -28,6 +29,7 @@ function LeaveApplication() {
         }
       );
       alert("Leave Application Submitted Successfully");
+      navigator("/waiting");
     } catch (e) {
       console.log(e);
       alert("Invalid input");

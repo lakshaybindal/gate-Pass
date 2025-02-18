@@ -4,11 +4,12 @@ import Inputbox from "../components/InputBox";
 import Button from "../components/Button";
 import axios from "axios";
 import frontImage from "../Images/frontImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigator = useNavigate();
   async function handleSignin() {
     try {
       const res = await axios.post("http://localhost:3000/api/user/signin", {
@@ -16,7 +17,7 @@ function Signin() {
         password,
       });
       localStorage.setItem("token", res.data.token);
-      alert("Signin Successful");
+      navigator("/dash");
     } catch (e) {
       console.log(e);
       alert("Invalid input");
@@ -33,13 +34,27 @@ function Signin() {
           link="/signup"
         />
         <div className="w-full max-w-md space-y-4">
-          <Inputbox label="Email" type="email" placeholder="Enter Your Email" setValue={setEmail} />
-          <Inputbox label="Password" type="password" placeholder="Enter Your Password" setValue={setPassword} />
+          <Inputbox
+            label="Email"
+            type="email"
+            placeholder="Enter Your Email"
+            setValue={setEmail}
+          />
+          <Inputbox
+            label="Password"
+            type="password"
+            placeholder="Enter Your Password"
+            setValue={setPassword}
+          />
           <Button label="Signin" onClick={handleSignin} />
         </div>
       </div>
       <div className="w-1/2 flex justify-center items-center">
-        <img src={frontImage} className="w-full h-full object-cover" alt="Signin" />
+        <img
+          src={frontImage}
+          className="w-full h-full object-cover"
+          alt="Signin"
+        />
       </div>
     </div>
   );

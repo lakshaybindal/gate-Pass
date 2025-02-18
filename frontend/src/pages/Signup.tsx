@@ -4,6 +4,7 @@ import Inputbox from "../components/InputBox";
 import Button from "../components/Button";
 import axios from "axios";
 import frontImage from "../Images/frontImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ function Signup() {
   const [parentEmail, setParentsEmail] = useState("");
   const [hostel, setHostel] = useState("");
   const [rollno, setRollno] = useState("");
-
+  const navigator = useNavigate();
   async function handleSignUp() {
     try {
       const res = await axios.post("http://localhost:3000/api/user/signup", {
@@ -24,7 +25,7 @@ function Signup() {
         hostelName: hostel,
       });
       localStorage.setItem("token", res.data.token);
-      alert("Signup Successful");
+      navigator("/dash");
     } catch (e) {
       console.log(e);
       alert("Invalid input");

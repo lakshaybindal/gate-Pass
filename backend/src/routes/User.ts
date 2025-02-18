@@ -72,7 +72,33 @@ const transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD,
   },
 });
-
+router.get(
+  "/me",
+  userAuth,
+  async (req: Request, res: Response): Promise<any> => {
+    try {
+      const user = await prisma.user.findFirst({
+        where: {
+          id: req.userId,
+        },
+        select: {
+          id: true,
+          email: true,
+          rollno: true,
+          name: true,
+          parentEmail: true,
+          hostelName: true,
+          parentAuth: true,
+          adminAuth: true,
+          parentAuthToken: true,
+        },
+      });
+      return res.json({ user });
+    } catch (e) {
+      return res.status(400).json({ error: "Invalid user" });
+    }
+  }
+);
 router.post(
   "/sendMail",
   userAuth,

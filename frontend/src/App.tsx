@@ -7,6 +7,9 @@ import Auth from "./pages/Auth";
 import AdminSignup from "./pages/AdminSignup";
 import AdminSignin from "./pages/AdminSignin";
 import Admindash from "./pages/AdminDash";
+import Waiting from "./pages/Waiting";
+import QRCode from "./pages/qrcode";
+import Scan from "./pages/scan";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route element={<AdminSignup />} path="/adminsignup"></Route>
           <Route element={<AdminSignin />} path="/adminsignin"></Route>
           <Route element={<Admindash />} path="/admindash"></Route>
+          <Route element={<Waiting />} path="/waiting"></Route>
+          <Route element={<QRCode />} path="/qr"></Route>
+          <Route element={<Scan />} path="/scan"></Route>
         </Routes>
       </BrowserRouter>
     </>

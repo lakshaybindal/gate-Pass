@@ -4,13 +4,14 @@ import Inputbox from "../components/InputBox";
 import Button from "../components/Button";
 import axios from "axios";
 import frontImage from "../Images/frontImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 function AdminSignup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [hostel, setHostel] = useState("");
-
+  const navigator = useNavigate();
   async function handleSignUp() {
     try {
       const res = await axios.post("http://localhost:3000/api/admin/signup", {
@@ -20,7 +21,7 @@ function AdminSignup() {
         hostelName: hostel,
       });
       localStorage.setItem("token", res.data.token);
-      alert("Signup Successful");
+      navigator("/admindash");
     } catch (e) {
       console.log(e);
       alert("Invalid input");

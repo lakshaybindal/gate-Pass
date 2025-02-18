@@ -4,11 +4,12 @@ import Inputbox from "../components/InputBox";
 import Button from "../components/Button";
 import axios from "axios";
 import frontImage from "../Images/frontImage.jpg";
+import { useNavigate } from "react-router-dom";
 
 function AdminSignin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigator = useNavigate();
   async function handleSignin() {
     try {
       const res = await axios.post("http://localhost:3000/api/admin/signin", {
@@ -16,7 +17,7 @@ function AdminSignin() {
         password,
       });
       localStorage.setItem("token", res.data.token);
-      alert("Signin Successful");
+      navigator("/admindash");
     } catch (e) {
       console.log(e);
       alert("Invalid input");
