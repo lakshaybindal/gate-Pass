@@ -1,6 +1,6 @@
 # Gate Pass System
 
-The **  Gate Pass System** is a digital solution designed to streamline the student leave approval process at   Institute. It ensures secure authentication by verifying student leave requests through parental approval via email. The request is also sent to the hostel caretaker for review on the admin side. Once approved, the system generates a **QR code**, which students present at the main gate for verification by the security guard. This system enhances security, reduces paperwork, and ensures a seamless leave approval process.
+The **Gate Pass System** is a digital solution designed to streamline the student leave approval process at   Institute. It ensures secure authentication by verifying student leave requests through parental approval via email. The request is also sent to the hostel caretaker for review on the admin side. Once approved, the system generates a **QR code**, which students present at the main gate for verification by the security guard. This system enhances security, reduces paperwork, and ensures a seamless leave approval process.
 
 ---
 
